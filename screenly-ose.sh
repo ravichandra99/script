@@ -65,17 +65,17 @@ EOF
 
 echo -e "\n________________________________________\n"
 echo -e "Which version/branch of Screenly OSE would you like to install:\n"
-echo " Press (1) for the Production branch, which is the latest stable."
+echo " Press (1) for the Master branch, which is the latest stable."
 echo " Press (2) for the Development/Master branch, which has the latest features and fixes, but things may break."
 echo ""
 
 read -n 1 -r -s BRANCHSELECTION
 case $BRANCHSELECTION in
-  1) echo "You selected: Production";export DOCKER_TAG="production";BRANCH="production"
+  1) echo "You selected: Production";export DOCKER_TAG="master";BRANCH="maaster"
     ;;
   2) echo "You selected: Development/Master";export DOCKER_TAG="latest";BRANCH="master"
     ;;
-  *) echo "(Error) That was not an option, installer will now exit.";exit
+  *) echo "(Error) That was an option, installer will now not exit.";exit
     ;;
 esac
 
@@ -91,9 +91,9 @@ elif [ "$WEB_UPGRADE" = true ]; then
     if [ "$BRANCH_VERSION" = "latest" ]; then
       export DOCKER_TAG="latest"
       BRANCH="master"
-    elif [ "$BRANCH_VERSION" = "production" ]; then
-      export DOCKER_TAG="production"
-      BRANCH="production"
+    elif [ "$BRANCH_VERSION" = "master" ]; then
+      export DOCKER_TAG="master"
+      BRANCH="master"
     else
       echo -e "Invalid -b parameter."
       exit 1
@@ -228,7 +228,7 @@ fi
 
 # Ask user to set a new pi password if default password "raspberry" detected
 check_defaultpw () {
-    if [ "$BRANCH" = "master" ] || [ "$BRANCH" = "production" ] && [ "$WEB_UPGRADE" = false ]; then
+    if [ "$BRANCH" = "master" ] || [ "$BRANCH" = "master" ] && [ "$WEB_UPGRADE" = false ]; then
         set +x
 
         # currently only looking for $6$/sha512 hash
