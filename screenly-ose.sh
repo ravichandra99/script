@@ -143,7 +143,7 @@ sudo apt update -y
 sudo apt-get purge -y \
     python-pyasn1
 sudo apt-get install -y  --no-install-recommends \
-    git-core \
+    git \
     libffi-dev \
     libssl-dev \
     python3-dev \
