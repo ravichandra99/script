@@ -161,7 +161,7 @@ fi
 
 # Install Ansible from requirements file.
 if [ "$BRANCH" = "master" ]; then
-    ANSIBLE_VERSION=$(curl -s https://raw.githubusercontent.com/Screenly/screenly-ose/$BRANCH/requirements/requirements.host.txt | grep ansible)
+    ANSIBLE_VERSION=$(curl -s https://raw.githubusercontent.com/Screenly/screenly-ose/master/requirements/requirements.host.txt | grep ansible)
 else
     ANSIBLE_VERSION=ansible==2.10.7
 fi
