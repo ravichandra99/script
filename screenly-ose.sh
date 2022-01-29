@@ -167,7 +167,7 @@ else
 fi
 
 sudo pip install "$ANSIBLE_VERSION"
-
+sudo chmod -R 777 /home/pi/screenly
 sudo -u pi ansible localhost \
     -m git \
     -a "repo=$REPOSITORY dest=/home/pi/screenly version=$BRANCH force=no"
