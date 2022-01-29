@@ -169,8 +169,8 @@ fi
 chown -R pi:pi .
 sudo pip install "$ANSIBLE_VERSION"
 
-sudo -u pi ansible localhost \
-    -m git \
+sudo -u pi ansible localhost\
+    -m -vvv git \
     -a "repo=$REPOSITORY dest=/home/pi/screenly version=$BRANCH force=yes"
 cd /home/pi/screenly/ansible
 
