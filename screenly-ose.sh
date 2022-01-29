@@ -163,12 +163,11 @@ fi
 if [ "$BRANCH" = "master" ]; then
     ANSIBLE_VERSION=$(curl -s https://raw.githubusercontent.com/Screenly/screenly-ose/$BRANCH/requirements/requirements.host.txt | grep ansible)
 else
-    ANSIBLE_VERSION=ansible==2.8.8
+    ANSIBLE_VERSION=ansible==2.10.7
 fi
 
 sudo pip install "$ANSIBLE_VERSION"
-sudo mkdir /home/pi/screenly
-sudo chmod -R 777 /home/pi/screenly
+
 sudo -u pi ansible localhost \
     -m git \
     -a "repo=$REPOSITORY dest=/home/pi/screenly version=$BRANCH force=no"
