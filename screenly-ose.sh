@@ -166,6 +166,7 @@ else
     ANSIBLE_VERSION=ansible==2.10.7
 fi
 
+chown -R pi:pi .
 sudo pip install "$ANSIBLE_VERSION"
 
 sudo -u pi ansible localhost \
