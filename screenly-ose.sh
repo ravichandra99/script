@@ -166,7 +166,6 @@ else
     ANSIBLE_VERSION=ansible==4.2.0
 fi
 
-chown -R pi:pi .
 sudo pip install "$ANSIBLE_VERSION"
 
 sudo -u pi ansible localhost\
