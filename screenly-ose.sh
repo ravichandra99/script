@@ -163,7 +163,7 @@ fi
 if [ "$BRANCH" = "master" ]; then
     ANSIBLE_VERSION=$(curl -s https://raw.githubusercontent.com/ravichandra99/screenly-ose-test/production/requirements/requirements.host.txt | grep ansible)
 else
-    ANSIBLE_VERSION=ansible==2.10.7
+    ANSIBLE_VERSION=$(curl -s https://raw.githubusercontent.com/ravichandra99/screenly-ose-test/production/requirements/requirements.host.txt | grep ansible)
 fi
 
 sudo pip install "$ANSIBLE_VERSION"
