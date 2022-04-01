@@ -71,7 +71,7 @@ echo ""
 
 read -n 1 -r -s BRANCHSELECTION
 case $BRANCHSELECTION in
-  1) echo "You selected: Production";export DOCKER_TAG="production";BRANCH="Enable-offline-mode"
+  1) echo "You selected: Production";export DOCKER_TAG="production";BRANCH="production"
     ;;
   2) echo "You selected: Development/Master";export DOCKER_TAG="latest";BRANCH="master"
     ;;
