@@ -93,7 +93,7 @@ elif [ "$WEB_UPGRADE" = true ]; then
       BRANCH="master"
     elif [ "$BRANCH_VERSION" = "production" ]; then
       export DOCKER_TAG="production"
-      BRANCH="Enable-offline-mode"
+      BRANCH="production"
     else
       echo -e "Invalid -b parameter."
       exit 1
@@ -161,7 +161,7 @@ fi
 
 # Install Ansible from requirements file.
 if [ "$BRANCH" = "master" ]; then
-    ANSIBLE_VERSION=$(curl -s https://raw.githubusercontent.com/ravichandra99/screenly-ose/production/requirements/requirements.host.txt | grep ansible)
+    ANSIBLE_VERSION=2.10.7
 else
     ANSIBLE_VERSION=2.10.7
 fi
