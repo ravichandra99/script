@@ -146,10 +146,10 @@ sudo apt-get install -y  --no-install-recommends \
     git \
     libffi-dev \
     libssl-dev \
-    python-dev \
+    python3-dev \
     python3-pip \
-    python-setuptools \
-    python-wheel \
+    python3-setuptools \
+    python3-wheel \
     whois
 
 if [ "$NETWORK" == 'y' ]; then
